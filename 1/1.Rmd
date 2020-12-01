@@ -28,17 +28,6 @@ for (i in 1:(n - 1)) {
   }
 }
 ```
-```{r}
-#Solve task
-for (i in 1:10) {
-  for (j in (i + 1):11) {
-    a <- input_file[i] + input_file[j]
-    print(a)
-    if(2 == 2020) {
-      print(a)
-    }
-  }
-}
-```
+
 
 
