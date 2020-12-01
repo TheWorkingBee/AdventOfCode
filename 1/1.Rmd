@@ -1,0 +1,44 @@
+---
+title: 'Day 1'
+output: github_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Task Desciption
+A  [document](https://adventofcode.com/2020/day/1/input) contains numbers on sepparate lines. Find the two whose sum is 2020 and mutiply them.
+
+## Solution
+```{r}
+#Prepare input data
+input_file <- scan("Input_file.txt")
+n <- length(input_file)
+```
+```{r}
+#Solve task
+for (i in 1:(n - 1)) {
+  for (j in (i + 1):n) {
+    sum <- input_file[i] + input_file[j]
+    if(sum == 2020) {
+      print(input_file[i] * input_file[j])
+    }
+  }
+}
+```
+```{r}
+#Solve task
+for (i in 1:10) {
+  for (j in (i + 1):11) {
+    a <- input_file[i] + input_file[j]
+    print(a)
+    if(2 == 2020) {
+      print(a)
+    }
+  }
+}
+```
+
+
