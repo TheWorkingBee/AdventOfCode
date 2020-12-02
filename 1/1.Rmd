@@ -4,7 +4,6 @@ output: github_document
 ---
 
 ```{r setup, include=FALSE}
-library(tidyverse)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -14,7 +13,7 @@ A  [document](https://adventofcode.com/2020/day/1/input) contains numbers on sep
 ## Solution
 ```{r}
 #Prepare input data
-input_file <- scan("Input_file.txt")
+input_file <- scan("input_file.txt")
 n <- length(input_file)
 ```
 ```{r}
