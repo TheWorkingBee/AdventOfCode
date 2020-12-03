@@ -14,7 +14,6 @@ We are given a [file](https://adventofcode.com/2020/day/2/input) whose rows cont
 ## Task solution
 ```{r}
 #Prepare input data
-# input_file <- scan("input_file_2.txt", what =  "character")
 input_file <- read_lines("input_file_2.txt")
 ```
 ```{r}
