@@ -1,0 +1,58 @@
+---
+title: 'Day 4'
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Task description
+We are given a file containing passport information. Each passport is represented by having `key:value` attributes sepparated by space or newline, while each passport is sepparated by a blankline. We are to count the #valid passports i.e. who have all of the following attributes:
+
+* byr (Birth Year)
+* iyr (Issue Year)
+* eyr (Expiration Year)
+* hgt (Height)
+* hcl (Hair Color)
+* ecl (Eye Color)
+* pid (Passport ID)
+* cid (Country ID) (this one is optional and hence not checked)
+
+## Task solution
+```{r}
+#Prepare input data
+file_name <- "input_file_4.txt"
+input_file <- read_lines(file_name)
+
+
+```
+```{r}
+valid <- 0
+curr_attribs <- c()
+#attrib_list <- c("byr:", "iyr:", "eyr:", "hgt:", "hcl:", "ecl:", "pid:")
+attrib_list <- "(byr:|iyr:|eyr:|hgt:|hcl:|ecl:|pid:)"
+n_attribs <- 7
+
+#Checker for testing if the input contains elements of all_attribs
+check_attrib <- function(str){
+  str_extract_all(str, attrib_list, simplify = TRUE)
+}
+
+for (str in input_file) {
+  if(str == "") {
+    valid <- valid + ifelse((curr_attribs %>% length) == n_attribs, 1, 0)
+    # print(c(curr_attribs, found_attribs,valid))
+    curr_attribs <- c()
+    next
+  }
+  curr_attribs <- c(curr_attribs,check_attrib(str))
+}
+
+#Adding 1 if the last passport was valid. (No "" to trigger after end of file)
+valid + ifelse((curr_attribs %>% length) == n_attribs, 1, 0)
+```
+
+
+
