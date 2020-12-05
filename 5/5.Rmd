@@ -1,0 +1,25 @@
+---
+title: 'Day 5'
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Task description
+We are given a file where each row represents a seating position on an airplane. The airplane has 128 rows, where each row has 8 seats. In the file these are represented using 10 letters. The first 8 represent determine the row number using the letters F and B (front and back respectively). Those are read from left to right and each letter means that you select the front or back row of the seats until there is only one left. The last three consist of R and L (light and left respectively), and determine the seat in the same way. This airline starts it indices at 0 instead of 1. 
+
+## Task solution
+```{r}
+#Prepare input data
+file_name <- "input_file_5.txt"
+input_file <- read_lines(file_name)
+```
+```{r}
+
+```
+
+
+
