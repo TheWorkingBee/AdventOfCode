@@ -1,0 +1,34 @@
+---
+title: 'Day 7'
+output: github_document
+---
+
+```{r setup, include=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Task description
+We are given a file where each row describes what other bags a certain bag color contains. For example: light red bags contain 1 bright white bag, 2 muted yellow bags. We are to figure out which bags can contain shiny gold bags.
+
+## Task solution
+```{r}
+#Prepare input data
+file_name <- "input_file_7.txt"
+input_file <- read_lines(file_name)
+```
+```{r}
+extract_content <- function(str) {
+  str_arr <- str_split(" ", simplify = TRUE)
+  color <- str_arr[1:2]
+  contains <- 
+  for (str in str_arr[-(1:5)])
+}
+
+contains_gold <- c()
+
+for 
+```
+
+
+
