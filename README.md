@@ -11,3 +11,5 @@ Day 5: https://github.com/TheWorkingBee/AdventOfCode/blob/main/5/5.md
 
 Day 6: https://github.com/TheWorkingBee/AdventOfCode/blob/main/6/6.md
 
+Day 7: https://github.com/TheWorkingBee/AdventOfCode/blob/main/7/7.md
+
