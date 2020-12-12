@@ -1,0 +1,39 @@
+---
+title: 'Day 10'
+output: github_document
+---
+
+```{r setup, include=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Task description
+Given a file with numbers on each row, we are to sort the numbers and count the number of times there is a difference of 1 or 3. The initial number is compared to 0 and the last one to a number that's 3 larger. 
+
+## Task solution
+```{r}
+#Prepare input data
+rm(list=ls())
+file_name <- "input_file_10.txt"
+input_file <- read_lines(file_name) %>% as.numeric()
+```
+```{r}
+input <- input_file %>% sort()
+#Last connection will be 3
+n_3 <- 1 
+#First connection is one
+n_1 <- 1
+
+for (i in 2:length(input)) {
+  diff <- input[i] - input[i - 1]
+  if (diff == 3) n_3 = n_3 + 1
+  if (diff == 1) n_1 = n_1 + 1
+}
+
+paste("n_3: ", n_3, ", ", "n_1: ", n_1)
+n_3 * n_1 
+```
+
+
+
