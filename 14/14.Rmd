@@ -1,0 +1,35 @@
+---
+title: 'Day 13'
+output: github_document
+---
+
+```{r setup, include=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Task description
+We are given a file with two lines. The first represents an arrival time (minutes), and the second represents bus ID:s, where the ID:s are their arrival-times. Our task is to find the bus bus with departure closest to the arrival time. We are to answer with bus ID * wait time. 
+
+## Task solution
+```{r}
+#Prepare input data
+rm(list=ls())
+file_name <- "input_file_13.txt"
+input_file <- read_lines(file_name) 
+```
+```{r}
+arrive <- input_file[1] %>% as.numeric()
+ids <- Filter(function (x) x != "x", input_file[2] %>% str_split(",", simplify = 1)) %>% as.numeric()
+
+n_departures <- (arrive/ids) %>% ceiling()
+
+wait <- (n_departures * ids) -  arrive
+
+min_wait <- min(wait)
+
+id_index <- match(min_wait, wait)
+
+ids[id_index] * wait[id_index]
+```
+
